@@ -1,0 +1,110 @@
+/* Geral */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Títulos */
+  h2, h3 {
+    color: #4CAF50; /* Verde escuro */
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-top: 20px;
+  }
+  
+  /* Formulário */
+  form {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  input[type="date"], input[type="number"] {
+    width: calc(50% - 22px);
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50; /* Verde escuro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049; /* Verde mais escuro */
+  }
+  
+  /* Mensagens de erro */
+  div *ngIf {
+    color: #f44336; /* Vermelho */
+    margin-top: 5px;
+  }
+  
+  /* Lista de clientes */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  li {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  li div {
+    margin-bottom: 5px;
+  }
+  
+  button {
+    background-color: #4CAF50; /* Verde escuro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Verde mais escuro */
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+  }
+  
+  /* Erros ao buscar cliente */
+  p {
+    text-align: center;
+    color: #f44336; /* Vermelho */
+  }
+  

@@ -1,0 +1,66 @@
+<h2>CRUD CLIENTS</h2>
+
+<h3>Post Client</h3>
+
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+  <!-- Nome -->
+  <input formControlName="name" placeholder="Name" />
+  <div *ngIf="name?.invalid && name?.touched">
+    <p *ngIf="name?.errors?.['required']">Nome é obrigatório</p>
+  </div>
+
+  <!-- CPF -->
+  <input formControlName="cpf" placeholder="CPF" />
+  <div *ngIf="cpf?.invalid && cpf?.touched">
+    <p *ngIf="cpf?.errors?.['required']">CPF é obrigatório</p>
+    <p *ngIf="cpf?.errors?.['invalidCpf']">{{ cpf?.errors?.['invalidCpf'] }}</p>
+  </div>
+
+  <!-- Income -->
+  <input formControlName="income" placeholder="Income" />
+  <div *ngIf="income?.invalid && income?.touched">
+    <p *ngIf="income?.errors?.['required']">Renda é obrigatória</p>
+    <p *ngIf="income?.errors?.['invalidIncome']">{{ income?.errors?.['invalidIncome'] }}</p>
+  </div>
+
+  <!-- Data de Nascimento -->
+  <input formControlName="birthDate" placeholder="Birth Date" type="date" />
+  <div *ngIf="birthDate?.invalid && birthDate?.touched">
+    <p *ngIf="birthDate?.errors?.['required']">Data de nascimento é obrigatória</p>
+  </div>
+
+  <!-- Número de Filhos -->
+  <input formControlName="children" placeholder="Children" type="number" />
+  <div *ngIf="children?.invalid && children?.touched">
+    <p *ngIf="children?.errors?.['required']">Número de filhos é obrigatório</p>
+    <p *ngIf="children?.errors?.['min']">Número de filhos não pode ser negativo</p>
+  </div>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<ul>
+    <li *ngFor="let client of clients">
+      <div>ID: {{ client.id }}</div>
+      <div>Name: {{ client.name }}</div>
+      <div>CPF: {{ client.cpf }}</div>
+      <div>Income: {{ client.income | currency }}</div>
+      <div>Birth Date: {{ client.birthDate | date }}</div>
+      <div>Children: {{ client.children }}</div>
+      <button (click)="deleteClientId(client.id)" >Delete</button>
+      <hr>
+    </li>
+</ul>
+  
+<h3>Get Client id</h3>
+<input [(ngModel)]="clientId" type="number" placeholder="Informe o id">
+<button (click)="getClientById()">Buscar Cliente</button>
+<p> Cliente: {{ client?.name }}</p>
+<div *ngIf="clientIdError">
+  <p>{{ clientIdError }}</p>
+</div>
+
+
+
+  
+
